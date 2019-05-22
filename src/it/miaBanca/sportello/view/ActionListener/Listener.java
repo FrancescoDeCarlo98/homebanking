@@ -143,9 +143,9 @@ public class Listener implements ActionListener{
 
                frame.getNuovaBancaPanel().getNomeNuovaBanca().setText("");
                frame.getNuovaBancaPanel().getIndirizzoNuovaBanca().setText("");
-               frame.getNuovaBancaPanel().getTxtIndirizzo().setText("");
-               frame.getNuovaBancaPanel().getTxtEmail().setText("");
-               frame.getNuovaBancaPanel().getTxtUsername().setText("");
+               frame.getNuovaBancaPanel().getNomeDirettoreNuovaBanca().setText("");
+               frame.getNuovaBancaPanel().getCognomeDirettoreNuovaBanca().setText("");
+               frame.getNuovaBancaPanel().().setText("");
                frame.getNuovaBancaPanel().getTxtPassword().setText("");
 
            case REGISTRATION_BTN:
