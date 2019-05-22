@@ -15,6 +15,8 @@ public class RegistrationPanel {
     private JTextField txtEmail;
     private JTextField txtUsername;
 
+    /* bla bla bla */
+
     public RegistrationPanel() {
         registrationPanel.getUI();
         registrationPanel.setVisible(false);
