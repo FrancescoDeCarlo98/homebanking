@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pdfbox-debugger-2.0.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pdfbox-tools-2.0.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pdfbox-2.0.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontbox-2.0.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/preflight-2.0.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xmpbox-2.0.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
