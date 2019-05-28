@@ -71,6 +71,9 @@ public class Frame extends JFrame {
         loginPanel.getButtonBack().addActionListener(Listener);
         loginPanel.getButtonBack().setActionCommand(Listener.BACK_BTN);
 
+        nuovaBancaPanel.getBackAdminButton().addActionListener(Listener);
+        nuovaBancaPanel.getBackAdminButton().setActionCommand(Listener.NUOVA_BANCA_BACK_BTN);
+
         registrationPanel.getInvioButton().addActionListener(Listener);
         registrationPanel.getInvioButton().setActionCommand(Listener.REGISTRATION_SEND_BTN);
 
