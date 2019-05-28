@@ -1,8 +1,10 @@
 package it.miaBanca.sportello.view.ActionListener;
 
 import it.miaBanca.sportello.business.LoginBusiness;
+import it.miaBanca.sportello.business.PersonaBusiness;
 import it.miaBanca.sportello.business.RegistrationBusiness;
 import it.miaBanca.sportello.helpers.MailHelper;
+import it.miaBanca.sportello.model.Persona;
 import it.miaBanca.sportello.view.Frame;
 
 
@@ -35,6 +37,8 @@ public class Listener implements ActionListener{
     public final static String CREA_NUOVA_BANCA_BTN= "Crea_Nuova_Banca_Btn";
     public final static String REGISTRA_BANCA_BTN= "Registra_Nuova_Banca_Btn";
     public final static String ELIMINA_DATI__FORM_BTN= "Elimina_Dati_Form_Btn";
+    public final static String ACCETTA_RICHIESTA_ADMIN="Accetta_Richiesta_Admin";
+    public final static String RIFIUTA_RICHIESTA_ADMIN="Rifuuta_Richiesta_Admin";
 
 
 
@@ -77,6 +81,8 @@ public class Listener implements ActionListener{
 
                        break;
                    case 4:
+//                       frame.getAdminPanel().getAdminPanel().revalidate();
+//                       frame.getAdminPanel().getAdminPanel().repaint();
                        frame.getAdminPanel().getAdminPanel().setVisible(true);
                        frame.getNuovaBancaPanel().getNuovaBancaPanel().setVisible(false);
                        frame.getHomePagePanel().getHomePanel().setVisible(false);
@@ -141,6 +147,14 @@ public class Listener implements ActionListener{
                frame.getClientePanel().getClientePanel().setVisible(false);
                frame.getDirettorePanel().getDirettorePanel().setVisible(false);
 
+
+//               frame.getNuovaBancaPanel().getNomeNuovaBanca().setText("");
+//               frame.getNuovaBancaPanel().getIndirizzoNuovaBanca().setText("");
+//               frame.getNuovaBancaPanel().getNomeDirettoreNuovaBanca().setText("");
+//               frame.getNuovaBancaPanel().getCognomeDirettoreNuovaBanca().setText("");
+//               frame.getNuovaBancaPanel().().setText("");
+//               frame.getNuovaBancaPanel().getTxtPassword().setText("");
+=======
                frame.getNuovaBancaPanel().getNomeNuovaBanca().setText("");
                frame.getNuovaBancaPanel().getIndirizzoNuovaBanca().setText("");
                frame.getNuovaBancaPanel().getNomeDirettoreNuovaBanca().setText("");
@@ -148,6 +162,7 @@ public class Listener implements ActionListener{
                frame.getNuovaBancaPanel().getIndirizzoNuovoDirettoreNuovaBanca().setText("");
                frame.getNuovaBancaPanel().getUsernameNuovoDirettoreNuovaBanca().setText("");
                frame.getNuovaBancaPanel().getPasswordNuovoDirettoreNuovaBanca().setText("");
+
 
            case REGISTRATION_BTN:
                 frame.getLoginPanel().getLoginPanel().setVisible(false);
@@ -218,6 +233,28 @@ public class Listener implements ActionListener{
                //TODO: voglio eliminare i dati inseriti nel form. Non so se ha senso farlo
                break;
 
+           case ACCETTA_RICHIESTA_ADMIN:
+               int id = Integer.parseInt(frame.getAdminPanel().getRichieste().get(this.frame.getAdminPanel().getUtentiAccettare().getSelectedIndex())[0]);
+               if(PersonaBusiness.getInstance().AccettaRichiesta(id))
+               {
+                   Persona p = PersonaBusiness.getInstance().findById(id);
+                   MailHelper.getInstance().send("guedeca98@gmail.com","accettazione richiesta","La tua richiesta è stata accettata dall'admin, complimenti!");
+               }
+//               this.frame.getAdminPanel().updateRichieste();
+//               frame.getAdminPanel().getAdminPanel().revalidate();
+//               frame.getAdminPanel().getAdminPanel().repaint();
+               break;
+
+           case RIFIUTA_RICHIESTA_ADMIN:
+               id = Integer.parseInt(frame.getAdminPanel().getRichieste().get(this.frame.getAdminPanel().getUtentiAccettare().getSelectedIndex())[0]);
+               if(PersonaBusiness.getInstance().rifiutaRichiesta(id)){
+                   Persona p = PersonaBusiness.getInstance().findById(id);
+                   MailHelper.getInstance().send("guedeca98@gmail.com","accettazione richiesta","La tua richiesta è stata accettata dall'admin, complimenti!");
+               }
+//               this.frame.getAdminPanel().updateRichieste();
+//               frame.getAdminPanel().getAdminPanel().revalidate();
+//               frame.getAdminPanel().getAdminPanel().repaint();
+               break;
 
             // TODO: STEP 4.1: Aggiungere il case con il nuovo bottone
            default:

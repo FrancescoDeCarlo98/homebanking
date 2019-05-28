@@ -18,7 +18,7 @@ public class DbConnection {
         if(instance == null)
             instance = new DbConnection();
         if(connesso != true)
-            connetti("bankappdb", "root", "UniversitaDelSalento");
+            connetti("bankappdb", "root", "francescorenna");
         return instance;
     }
 

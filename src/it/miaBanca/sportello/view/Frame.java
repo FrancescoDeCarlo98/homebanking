@@ -1,5 +1,6 @@
 package it.miaBanca.sportello.view;
 
+import it.miaBanca.sportello.view.ActionListener.AdminComboListener;
 import it.miaBanca.sportello.view.ActionListener.Listener;
 import it.miaBanca.sportello.view.Panel.*;
 
@@ -13,11 +14,10 @@ public class Frame extends JFrame {
     HomePagePanel homePagePanel = new HomePagePanel();
     LoginPanel loginPanel = new LoginPanel(); //fatto da mimmo con la gui
     AdminPanel adminPanel = new AdminPanel();
-    NuovaBancaPanel nuovaBancaPanel = new NuovaBancaPanel();
+    AdminPanel nuovaBancaPanel = new AdminPanel();
     DirettorePanel direttorePanel= new DirettorePanel();
     ClientePanel clientePanel = new ClientePanel();
-
-
+    /* PANNELLI PRINCIPALI*/
     JPanel northPanel = new JPanel();
     JPanel southPanel = new JPanel();
     JPanel centralPanel = new JPanel();
@@ -44,7 +44,7 @@ public class Frame extends JFrame {
         centralPanel.add(homePagePanel.getHomePanel());
         centralPanel.add(loginPanel.getLoginPanel());
         centralPanel.add(adminPanel.getAdminPanel());
-        centralPanel.add(nuovaBancaPanel.getNuovaBancaPanel());
+        centralPanel.add(adminPanel.getNuovaBancaPanel());
         centralPanel.add(clientePanel.getClientePanel());
 
 
@@ -52,6 +52,7 @@ public class Frame extends JFrame {
 
         //TODO: Step 5: istanziare una classe del listener
         Listener Listener = new Listener(this);
+        AdminComboListener combo = new AdminComboListener(this);
 
 
         //TODO: Step 6: aggiungere listener al bottone e dire quale comando eseguire
@@ -97,6 +98,14 @@ public class Frame extends JFrame {
         adminPanel.getEliminaDatiBancaButton().addActionListener(Listener);
         adminPanel.getEliminaDatiBancaButton().setActionCommand(Listener.ELIMINA_DATI__FORM_BTN);
 
+        adminPanel.getAccettaRichiestaButton().addActionListener(Listener);
+        adminPanel.getAccettaRichiestaButton().setActionCommand(Listener.ACCETTA_RICHIESTA_ADMIN);
+
+        adminPanel.getRifiutaRichiestaButton().addActionListener(Listener);
+        adminPanel.getRifiutaRichiestaButton().setActionCommand(Listener.RIFIUTA_RICHIESTA_ADMIN);
+
+        adminPanel.getUtentiAccettare().addActionListener(combo);
+
     }
 
     // TODO: STEP 3: Creare Getter del nuovo Pannello
@@ -116,7 +125,7 @@ public class Frame extends JFrame {
     public HomePagePanel getHomePagePanel () {return homePagePanel;}
     public LoginPanel getLoginPanel() {return loginPanel;}
     public AdminPanel getAdminPanel() {return adminPanel ; }
-    public NuovaBancaPanel getNuovaBancaPanel() { return nuovaBancaPanel; }
+    public AdminPanel getNuovaBancaPanel(){return nuovaBancaPanel;}
     public DirettorePanel getDirettorePanel() {return  direttorePanel;}
     public ClientePanel getClientePanel() { return clientePanel; }
 }
