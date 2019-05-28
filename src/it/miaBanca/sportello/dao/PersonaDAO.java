@@ -29,12 +29,36 @@ public class PersonaDAO implements IpersonaDAO {
 
         if(result.size()!=0) {
             String[] riga = result.get(0);
-            p=new Persona();
+            p = new Persona();
             p.setNome(riga[1]);
             p.setCognome(riga[2]);
-            p.setEmail(riga[3]);
+            p.setEmail(riga[4]);
+            p.setIndirizzo(riga[3]);
+            p.setUsername(riga[5]);
+            p.setPassword(riga[6]);
         }
 
+        return p;
+    }
+
+    public Persona findByUser(String user) {
+        Persona p = null;
+
+        String sql = "SELECT * FROM persona WHERE username='"+user+"';";
+
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery(sql);//arraylist di vettori di stringhe, ogni vettore è una riga della tabella risultato
+
+        if (result.size() != 0) {
+            String[] riga = result.get(0);
+            p = new Persona();
+            p.setNome(riga[1]);
+            p.setCognome(riga[2]);
+            p.setEmail(riga[4]);
+            p.setIndirizzo(riga[3]);
+            p.setUsername(riga[5]);
+            p.setPassword(riga[6]);
+
+        }
         return p;
     }
 
@@ -131,8 +155,24 @@ public class PersonaDAO implements IpersonaDAO {
     }
 
     public ArrayList<String[]> RichiesteSospese(){
-        String sql = "SELECT * from persona where persona.accetato=1;";
+        String sql = "SELECT * from persona where persona.accettato=1;";
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery(sql);
         return result;
     }
+
+    public boolean AccettaRichiesta(int id){
+        String sql = "UPDATE persona SET accettato=0 where idpersona="+id+";";
+        return DbConnection.getInstance().eseguiAggiornamento(sql);
+    }
+
+    public boolean rifiutaRichiesta(int id){
+        String sql = "DELETE FROM `bankappdb`.`persona` WHERE idpersona="+id+";";
+        return DbConnection.getInstance().eseguiAggiornamento(sql);
+    }
+
+
+
+    // public boolean
+
+
 }
