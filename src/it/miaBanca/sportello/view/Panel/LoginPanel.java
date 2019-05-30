@@ -24,9 +24,7 @@ public class LoginPanel {
 
     public JTextField getPwdPassword() { return PwdPassword; }
 
-    public JButton getButtonSend() {
-        return ButtonSend;
-    }
+    public JButton getButtonSend() { return ButtonSend;}
 
     public JButton getButtonBack() {
         return ButtonBack;

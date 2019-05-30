@@ -6,10 +6,23 @@ public class ClientePanel {
     private JPanel clientePanel;
     private JTextField clienteTextField;
     private JButton LogOutButtonCliente;
+    private JButton CreaContoCorrenteButton;
+    private JComboBox comboBox1;
+    private JButton inviaRichiestaContoCorrenteButton;
+
+
+    public JButton getCreaContoCorrenteButton() {
+        return CreaContoCorrenteButton;
+    }
+
+    public JComboBox getComboBox1() {
+        return comboBox1;
+    }
 
     public ClientePanel() {
         clientePanel.getUI();
         clientePanel.setVisible(false);
+        CreaContoCorrenteButton.setVisible(true);
     }
 
     public JPanel getClientePanel() {

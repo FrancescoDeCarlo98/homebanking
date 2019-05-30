@@ -22,11 +22,15 @@ public class Listener implements ActionListener{
     private RegistrationBusiness registrationBusiness = new RegistrationBusiness();
 
     // TODO STEP 4: Creare una variabile stringa da associare al bottone
+    //Login HomePage
     public final static String LOGIN_BTN = "Login_Btn";
+    //Login Send
     public final static String LOGIN_SEND_BTN = "Login_Send_Btn";
+    //Registrazione HomePage
     public final static String REGISTRATION_BTN = "Registration_Btn";
-    public final static String BACK_BTN = "Back_Btn";
-    public final static String REGISTRATION_BACK_BTN = "Back_Registration_Btn";
+    //Back Home GENERALE della HOMEPAGE
+    public final static String BACK_HOME_BTN = "Back_Home_Btn";
+    //Back Button dal Pannello
     public final static String NUOVA_BANCA_BACK_BTN = "Back_Nuova_Banca_Btn";
     public final static String REGISTRATION_SEND_BTN = "Tentativo_registrazione";
     public final static String ACCETTA_REGISTRAZIONE_BTN ="Accetta_Registrazione_Btn";
@@ -35,6 +39,8 @@ public class Listener implements ActionListener{
     public final static String CREA_NUOVA_BANCA_BTN= "Crea_Nuova_Banca_Btn";
     public final static String REGISTRA_BANCA_BTN= "Registra_Nuova_Banca_Btn";
     public final static String ELIMINA_DATI__FORM_BTN= "Elimina_Dati_Form_Btn";
+
+    public final static  String CREA_CONTO_CORRENTE_BTN= "Crea_CC_Btn";
 
 
 
@@ -123,16 +129,7 @@ public class Listener implements ActionListener{
 
              break;
 
-           case REGISTRATION_BACK_BTN :
-               frame.getRegistrationPanel().getRegistrationPanel().setVisible(false);
-               frame.getHomePagePanel().getHomePanel().setVisible(true);
-               frame.getAdminPanel().getAdminPanel().setVisible(false);
-               frame.getNuovaBancaPanel().getNuovaBancaPanel().setVisible(false);
-               frame.getClientePanel().getClientePanel().setVisible(false);
-               frame.getDirettorePanel().getDirettorePanel().setVisible(false);    //direttore
-               break;
-
-           case NUOVA_BANCA_BACK_BTN:
+             case NUOVA_BANCA_BACK_BTN:
                frame.getAdminPanel().getAdminPanel().setVisible(true);
                frame.getLoginPanel().getLoginPanel().setVisible(false);
                frame.getRegistrationPanel().getRegistrationPanel().setVisible(false);
@@ -148,6 +145,7 @@ public class Listener implements ActionListener{
                frame.getNuovaBancaPanel().getIndirizzoNuovoDirettoreNuovaBanca().setText("");
                frame.getNuovaBancaPanel().getUsernameNuovoDirettoreNuovaBanca().setText("");
                frame.getNuovaBancaPanel().getPasswordNuovoDirettoreNuovaBanca().setText("");
+                break;
 
            case REGISTRATION_BTN:
                 frame.getLoginPanel().getLoginPanel().setVisible(false);
@@ -166,10 +164,10 @@ public class Listener implements ActionListener{
                 frame.getAdminPanel().getAdminPanel().setVisible(false);
                 frame.getNuovaBancaPanel().getNuovaBancaPanel().setVisible(false);
                 frame.getClientePanel().getClientePanel().setVisible(false);
-               frame.getDirettorePanel().getDirettorePanel().setVisible(false);    //direttore
+                frame.getDirettorePanel().getDirettorePanel().setVisible(false);    //direttore
             break;
 
-           case BACK_BTN:
+           case BACK_HOME_BTN:
                frame.getHomePagePanel().getHomePanel().setVisible(true);
                frame.getLoginPanel().getLoginPanel().setVisible(false);
                frame.getRegistrationPanel().getRegistrationPanel().setVisible(false);
@@ -208,6 +206,17 @@ public class Listener implements ActionListener{
                frame.getClientePanel().getClientePanel().setVisible(false);
                frame.getDirettorePanel().getDirettorePanel().setVisible(false);    //direttore
                break;
+
+           case CREA_CONTO_CORRENTE_BTN:
+               frame.getClientePanel().getClientePanel().setVisible(true);
+               frame.getClientePanel().getCreaContoCorrenteButton().setVisible(true);
+               frame.getAdminPanel().getAdminPanel().setVisible(false);
+               frame.getNuovaBancaPanel().getNuovaBancaPanel().setVisible(false);
+               frame.getHomePagePanel().getHomePanel().setVisible(false);
+               frame.getLoginPanel().getLoginPanel().setVisible(false);
+               frame.getRegistrationPanel().getRegistrationPanel().setVisible(false);
+               frame.getDirettorePanel().getDirettorePanel().setVisible(false);
+                break;
 
            case REGISTRA_BANCA_BTN:
                //questo mi apre il pane dal quale poi elimino le banche selezionate

@@ -11,9 +11,9 @@ public class Frame extends JFrame {
     // TODO: STEP 1: Definisco un oggetto Pannello ( il nuovo pannello creato)
     RegistrationPanel registrationPanel = new RegistrationPanel();
     HomePagePanel homePagePanel = new HomePagePanel();
-    LoginPanel loginPanel = new LoginPanel(); //fatto da mimmo con la gui
-    AdminPanel adminPanel = new AdminPanel();
     NuovaBancaPanel nuovaBancaPanel = new NuovaBancaPanel();
+    LoginPanel loginPanel = new LoginPanel();
+    AdminPanel adminPanel = new AdminPanel();
     DirettorePanel direttorePanel= new DirettorePanel();
     ClientePanel clientePanel = new ClientePanel();
 
@@ -65,10 +65,10 @@ public class Frame extends JFrame {
         homePagePanel.getLoginButton().setActionCommand(Listener.LOGIN_BTN);
 
         registrationPanel.getBackButton().addActionListener(Listener);
-        registrationPanel.getBackButton().setActionCommand(Listener.BACK_BTN);
+        registrationPanel.getBackButton().setActionCommand(Listener.BACK_HOME_BTN);
 
         loginPanel.getButtonBack().addActionListener(Listener);
-        loginPanel.getButtonBack().setActionCommand(Listener.BACK_BTN);
+        loginPanel.getButtonBack().setActionCommand(Listener.BACK_HOME_BTN);
 
         nuovaBancaPanel.getBackAdminButton().addActionListener(Listener);
         nuovaBancaPanel.getBackAdminButton().setActionCommand(Listener.NUOVA_BANCA_BACK_BTN);
@@ -96,6 +96,9 @@ public class Frame extends JFrame {
 
         adminPanel.getEliminaDatiBancaButton().addActionListener(Listener);
         adminPanel.getEliminaDatiBancaButton().setActionCommand(Listener.ELIMINA_DATI__FORM_BTN);
+
+        clientePanel.getCreaContoCorrenteButton().addActionListener(Listener);
+        clientePanel.getCreaContoCorrenteButton().setActionCommand(Listener.CREA_CONTO_CORRENTE_BTN);
 
     }
 
