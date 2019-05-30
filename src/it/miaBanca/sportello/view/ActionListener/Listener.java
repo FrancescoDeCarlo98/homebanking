@@ -147,22 +147,12 @@ public class Listener implements ActionListener{
                frame.getClientePanel().getClientePanel().setVisible(false);
                frame.getDirettorePanel().getDirettorePanel().setVisible(false);
 
-
 //               frame.getNuovaBancaPanel().getNomeNuovaBanca().setText("");
 //               frame.getNuovaBancaPanel().getIndirizzoNuovaBanca().setText("");
 //               frame.getNuovaBancaPanel().getNomeDirettoreNuovaBanca().setText("");
 //               frame.getNuovaBancaPanel().getCognomeDirettoreNuovaBanca().setText("");
 //               frame.getNuovaBancaPanel().().setText("");
 //               frame.getNuovaBancaPanel().getTxtPassword().setText("");
-=======
-               frame.getNuovaBancaPanel().getNomeNuovaBanca().setText("");
-               frame.getNuovaBancaPanel().getIndirizzoNuovaBanca().setText("");
-               frame.getNuovaBancaPanel().getNomeDirettoreNuovaBanca().setText("");
-               frame.getNuovaBancaPanel().getCognomeDirettoreNuovaBanca().setText("");
-               frame.getNuovaBancaPanel().getIndirizzoNuovoDirettoreNuovaBanca().setText("");
-               frame.getNuovaBancaPanel().getUsernameNuovoDirettoreNuovaBanca().setText("");
-               frame.getNuovaBancaPanel().getPasswordNuovoDirettoreNuovaBanca().setText("");
-
 
            case REGISTRATION_BTN:
                 frame.getLoginPanel().getLoginPanel().setVisible(false);
