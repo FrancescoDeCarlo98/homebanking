@@ -14,7 +14,7 @@ public class Frame extends JFrame {
     HomePagePanel homePagePanel = new HomePagePanel();
     LoginPanel loginPanel = new LoginPanel(); //fatto da mimmo con la gui
     AdminPanel adminPanel = new AdminPanel();
-    AdminPanel nuovaBancaPanel = new AdminPanel();
+    NuovaBancaPanel nuovaBancaPanel = new NuovaBancaPanel();
     DirettorePanel direttorePanel= new DirettorePanel();
     ClientePanel clientePanel = new ClientePanel();
     /* PANNELLI PRINCIPALI*/
@@ -44,7 +44,7 @@ public class Frame extends JFrame {
         centralPanel.add(homePagePanel.getHomePanel());
         centralPanel.add(loginPanel.getLoginPanel());
         centralPanel.add(adminPanel.getAdminPanel());
-        centralPanel.add(adminPanel.getNuovaBancaPanel());
+        centralPanel.add(nuovaBancaPanel.getNuovaBancaPanel());
         centralPanel.add(clientePanel.getClientePanel());
 
 
@@ -101,6 +101,9 @@ public class Frame extends JFrame {
         adminPanel.getRifiutaRichiestaButton().addActionListener(Listener);
         adminPanel.getRifiutaRichiestaButton().setActionCommand(Listener.RIFIUTA_RICHIESTA_ADMIN);
 
+        nuovaBancaPanel.getEliminaDatiBancaButton().addActionListener(Listener);
+        nuovaBancaPanel.getEliminaDatiBancaButton().setActionCommand(Listener.ELIMINA_DATI__FORM_BTN);
+
         adminPanel.getUtentiAccettare().addActionListener(combo);
 
     }
@@ -122,7 +125,7 @@ public class Frame extends JFrame {
     public HomePagePanel getHomePagePanel () {return homePagePanel;}
     public LoginPanel getLoginPanel() {return loginPanel;}
     public AdminPanel getAdminPanel() {return adminPanel ; }
-    public AdminPanel getNuovaBancaPanel(){return nuovaBancaPanel;}
+    public NuovaBancaPanel getNuovaBancaPanel(){return nuovaBancaPanel;}
     public DirettorePanel getDirettorePanel() {return  direttorePanel;}
     public ClientePanel getClientePanel() { return clientePanel; }
 }

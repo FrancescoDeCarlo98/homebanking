@@ -146,12 +146,12 @@ public class Listener implements ActionListener{
                frame.getNuovaBancaPanel().getNuovaBancaPanel().setVisible(false);
                frame.getClientePanel().getClientePanel().setVisible(false);
                frame.getDirettorePanel().getDirettorePanel().setVisible(false);
-
+//
 //               frame.getNuovaBancaPanel().getNomeNuovaBanca().setText("");
 //               frame.getNuovaBancaPanel().getIndirizzoNuovaBanca().setText("");
 //               frame.getNuovaBancaPanel().getNomeDirettoreNuovaBanca().setText("");
 //               frame.getNuovaBancaPanel().getCognomeDirettoreNuovaBanca().setText("");
-//               frame.getNuovaBancaPanel().().setText("");
+//               frame.getNuovaBancaPanel().setText("");
 //               frame.getNuovaBancaPanel().getTxtPassword().setText("");
 
            case REGISTRATION_BTN:
@@ -220,7 +220,13 @@ public class Listener implements ActionListener{
                break;
 
            case ELIMINA_DATI__FORM_BTN:
-               //TODO: voglio eliminare i dati inseriti nel form. Non so se ha senso farlo
+               frame.getNuovaBancaPanel().getNomeNuovaBanca().setText("");
+               frame.getNuovaBancaPanel().getIndirizzoNuovaBanca().setText("");
+               frame.getNuovaBancaPanel().getNomeDirettoreNuovaBanca().setText("");
+               frame.getNuovaBancaPanel().getCognomeDirettoreNuovaBanca().setText("");
+               frame.getNuovaBancaPanel().getUsernameNuovoDirettoreNuovaBanca().setText("");
+               frame.getNuovaBancaPanel().getPasswordNuovoDirettoreNuovaBanca().setText("");
+               frame.getNuovaBancaPanel().getIndirizzoNuovoDirettoreNuovaBanca().setText("");
                break;
 
            case ACCETTA_RICHIESTA_ADMIN:
@@ -240,6 +246,7 @@ public class Listener implements ActionListener{
                if(PersonaBusiness.getInstance().rifiutaRichiesta(id)){
                    Persona p = PersonaBusiness.getInstance().findById(id);
                    MailHelper.getInstance().send("guedeca98@gmail.com","accettazione richiesta","La tua richiesta è stata accettata dall'admin, complimenti!");
+                   JOptionPane.showMessageDialog(null, "ATTENZIONE! "+p.getNome()+" "+p.getCognome()+" è stato eiettato." );
                }
 //               this.frame.getAdminPanel().updateRichieste();
 //               frame.getAdminPanel().getAdminPanel().revalidate();
