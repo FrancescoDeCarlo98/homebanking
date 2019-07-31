@@ -1,6 +1,7 @@
 package it.miaBanca.sportello.view.Panel;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ClientePanel {
     private JPanel clientePanel;
@@ -29,7 +30,9 @@ public class ClientePanel {
         return clientePanel;
     }
 
-    public void setClientePanel(JPanel clientePanel) { this.clientePanel = clientePanel; }
+    public void setClientePanel(JPanel clientePanel) {
+        this.clientePanel = clientePanel;
+    }
 
     public JTextField getClienteTextField() {
         return clienteTextField;
@@ -46,4 +49,5 @@ public class ClientePanel {
     public void setLogOutButtonCliente(JButton logOutButton) {
         this.LogOutButtonCliente = logOutButton;
     }
+
 }

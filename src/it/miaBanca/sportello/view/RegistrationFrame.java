@@ -1,7 +1,7 @@
 package it.miaBanca.sportello.view;
 
 import it.miaBanca.sportello.dao.PersonaDAO;
-import it.miaBanca.sportello.model.Persona;
+import it.miaBanca.sportello.model.PersonaModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,7 +55,7 @@ public class RegistrationFrame extends JFrame {
         public void actionPerformed(ActionEvent e)
         {
 
-            Persona p= new Persona(nome.getText(), cognome.getText(), indirizzo.getText(), email.getText(), username.getText(), password.getText());
+            PersonaModel p= new PersonaModel(nome.getText(), cognome.getText(), indirizzo.getText(), email.getText(), username.getText(), password.getText());
             int prova= PersonaDAO.getInstance().InserisciPersona(p);
             if (prova ==1)
             {

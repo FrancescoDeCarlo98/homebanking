@@ -1,6 +1,8 @@
 package it.miaBanca.sportello.view.Panel;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 public class RegistrationPanel {
 
@@ -61,4 +63,5 @@ public class RegistrationPanel {
     public JTextField getTxtUsername() {
         return txtUsername;
     }
+
 }

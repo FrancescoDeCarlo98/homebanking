@@ -2,9 +2,9 @@ package it.miaBanca.sportello.dao;
 
 import it.miaBanca.sportello.dbInterface.DbConnection;
 import it.miaBanca.sportello.interfaces.IprodottoDAO;
-import it.miaBanca.sportello.model.CartaPrepagata;
-import it.miaBanca.sportello.model.ContoCorrente;
-import it.miaBanca.sportello.model.Prodotto;
+import it.miaBanca.sportello.model.CartaPrepagataModel;
+import it.miaBanca.sportello.model.ContoCorrenteModel;
+import it.miaBanca.sportello.model.ProdottoModel;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,13 +12,14 @@ import java.util.Iterator;
 public class ProdottoDAO implements IprodottoDAO {
 
     @Override
-    public Prodotto findById(int id) {
+    public ProdottoModel findById(int id) {
         return null;
     }
 
     @Override
-    public ArrayList<Prodotto> findAll() {
-        ArrayList<Prodotto> prodotti = new ArrayList<Prodotto>();
+    public ArrayList<ProdottoModel> findAll() {
+
+        ArrayList<ProdottoModel> prodotti = new ArrayList<ProdottoModel>();
         String sql= "SELECT * FROM prodotto" +
                 "JOIN prodotto_has_caratteristica as H"+
                 "ON P.idprodotto = H.prodotto_idprodotto"+
@@ -38,13 +39,13 @@ public class ProdottoDAO implements IprodottoDAO {
 
             switch (idProdotto){
                 case 1:
-                    ContoCorrente cc = new ContoCorrente();
+                    ContoCorrenteModel cc = new ContoCorrenteModel();
                     //cc.setMassimalePrelievo(Float.parseFloat(riga[8]));
                     prodotti.add(cc);
                     break;
 
                 case 2:
-                    CartaPrepagata cp = new CartaPrepagata();
+                    CartaPrepagataModel cp = new CartaPrepagataModel();
                     //cp.setNumMaxOperazioni(Integer.parseInt(riga[7]));
                     prodotti.add(cp);
                     break;

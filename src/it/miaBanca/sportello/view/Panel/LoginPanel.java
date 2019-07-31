@@ -1,13 +1,15 @@
 package it.miaBanca.sportello.view.Panel;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 public class LoginPanel {
     private JPanel loginPanel;
     private JTextField TxtUsername;
-    private JTextField PwdPassword;
     private JButton ButtonSend;
     private JButton ButtonBack;
+    private JPasswordField passwordField;
 
     public LoginPanel() {
         loginPanel.getUI();
@@ -22,9 +24,13 @@ public class LoginPanel {
         return TxtUsername;
     }
 
-    public JTextField getPwdPassword() { return PwdPassword; }
+    public JPasswordField getPwdPassword() {
+        return passwordField;
+    }
 
-    public JButton getButtonSend() { return ButtonSend;}
+    public JButton getButtonSend() {
+        return ButtonSend;
+    }
 
     public JButton getButtonBack() {
         return ButtonBack;

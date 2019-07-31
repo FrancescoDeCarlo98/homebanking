@@ -5,11 +5,11 @@ import it.miaBanca.sportello.model.*;
 
 import java.util.ArrayList;
 
-public interface IContoCorrenteDAO extends IBaseDAO<ContoCorrente>
+public interface IContoCorrenteDAO extends IBaseDAO<ContoCorrenteModel>
 {
-    public ContoCorrente findById(int id);
+    public ContoCorrenteModel findById(int id);
 
-    public ArrayList<ContoCorrente> findAll();
+    public ArrayList<ContoCorrenteModel> findAll();
 
-    public ArrayList<ContoCorrente> findByPersona(Persona p);
+    public ArrayList<ContoCorrenteModel> findByPersona(PersonaModel p);
 }

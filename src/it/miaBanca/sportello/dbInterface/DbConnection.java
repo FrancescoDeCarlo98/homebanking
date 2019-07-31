@@ -5,6 +5,8 @@ package it.miaBanca.sportello.dbInterface;
  * Gestisce l'apertura e la chiusura della connessione col Database
  * Fornisce i metodi per l'esecuzione delle query sul Database
  */
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -127,6 +129,19 @@ public class DbConnection {
             db.close();    // Chiude la connessione con il Database
             connesso = false;
         } catch (Exception e) { e.printStackTrace(); }
+    }
+
+    public void addFoto(File file){
+        try{
+            FileInputStream inputStream=new FileInputStream(file);
+            String sql="insert into foto (idtable1, foto) values (1, ?)";
+            PreparedStatement statement=db.prepareStatement(sql);
+            statement.setBlob(1, inputStream);
+            statement.executeUpdate();
+            statement.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public boolean isConnesso() {

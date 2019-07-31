@@ -1,6 +1,6 @@
 package it.miaBanca.sportello.model;
 
-public class Prodotto {
+public class ProdottoModel {
     private int id;
     private String nome;
     private String descrizione;

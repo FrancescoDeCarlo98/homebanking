@@ -2,13 +2,13 @@ package it.miaBanca.sportello.model;
 
 import it.miaBanca.sportello.interfaces.MetodoDiPagamento;
 
-public class PagamentoViaBonifico implements MetodoDiPagamento {
+public class PagamentoViaBonificoModel implements MetodoDiPagamento {
 
-    public ContoCorrente origine;
-    public ContoCorrente beneficiario;
+    public ContoCorrenteModel origine;
+    public ContoCorrenteModel beneficiario;
     public float importo;
 
-    public PagamentoViaBonifico(ContoCorrente origine, ContoCorrente beneficiario, float importo)
+    public PagamentoViaBonificoModel(ContoCorrenteModel origine, ContoCorrenteModel beneficiario, float importo)
     {
         this.origine = origine;
         this.beneficiario = beneficiario;

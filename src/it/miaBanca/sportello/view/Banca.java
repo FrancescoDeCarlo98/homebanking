@@ -4,8 +4,8 @@ import it.miaBanca.sportello.dao.ContoCorrenteDAO;
 import it.miaBanca.sportello.dao.PersonaDAO;
 import it.miaBanca.sportello.dbInterface.DbConnection;
 import it.miaBanca.sportello.helpers.MailHelper;
-import it.miaBanca.sportello.model.ContoCorrente;
-import it.miaBanca.sportello.model.Persona;
+import it.miaBanca.sportello.model.ContoCorrenteModel;
+import it.miaBanca.sportello.model.PersonaModel;
 
 import javax.swing.*;
 import java.awt.*;
