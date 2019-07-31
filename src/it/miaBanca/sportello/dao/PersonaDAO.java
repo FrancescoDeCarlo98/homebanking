@@ -2,8 +2,8 @@ package it.miaBanca.sportello.dao;
 
 import it.miaBanca.sportello.dbInterface.DbConnection;
 import it.miaBanca.sportello.interfaces.IpersonaDAO;
-import it.miaBanca.sportello.model.ContoCorrente;
-import it.miaBanca.sportello.model.Persona;
+import it.miaBanca.sportello.model.ContoCorrenteModel;
+import it.miaBanca.sportello.model.PersonaModel;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -19,9 +19,17 @@ public class PersonaDAO implements IpersonaDAO {
     }
     //pattern singleton
 
+    public boolean FindUsername(String username){
+        System.out.println(username);
+        String sql="select count(*) from persona where username='"+username+"';";
+        if (Integer.parseInt(DbConnection.getInstance().eseguiQuery(sql).get(0)[0]) == 1)
+            return true;
+        else
+            return false;
+    }
 
-    public Persona findById(int id) {
-        Persona p = null;
+    public PersonaModel findById(int id) {
+        PersonaModel p = null;
 
         String sql = "SELECT * FROM persona WHERE idpersona="+id+";";
 
@@ -29,7 +37,7 @@ public class PersonaDAO implements IpersonaDAO {
 
         if(result.size()!=0) {
             String[] riga = result.get(0);
-            p = new Persona();
+            p = new PersonaModel();
             p.setNome(riga[1]);
             p.setCognome(riga[2]);
             p.setEmail(riga[4]);
@@ -41,8 +49,8 @@ public class PersonaDAO implements IpersonaDAO {
         return p;
     }
 
-    public Persona findByUser(String user) {
-        Persona p = null;
+    public PersonaModel findByUser(String user) {
+        PersonaModel p = null;
 
         String sql = "SELECT * FROM persona WHERE username='"+user+"';";
 
@@ -50,7 +58,7 @@ public class PersonaDAO implements IpersonaDAO {
 
         if (result.size() != 0) {
             String[] riga = result.get(0);
-            p = new Persona();
+            p = new PersonaModel();
             p.setNome(riga[1]);
             p.setCognome(riga[2]);
             p.setEmail(riga[4]);
@@ -62,9 +70,9 @@ public class PersonaDAO implements IpersonaDAO {
         return p;
     }
 
-    public ArrayList<Persona> findAll() {
+    public ArrayList<PersonaModel> findAll() {
 
-        ArrayList<Persona> items = new ArrayList<Persona>();
+        ArrayList<PersonaModel> items = new ArrayList<PersonaModel>();
 
         String sql = "SELECT * FROM persona;";
 
@@ -75,7 +83,7 @@ public class PersonaDAO implements IpersonaDAO {
         while(i.hasNext()) {
             String[] riga = i.next();
 
-            Persona p = new Persona();
+            PersonaModel p = new PersonaModel();
 
             p.setNome(riga[1]);
             p.setCognome(riga[2]);
@@ -89,7 +97,7 @@ public class PersonaDAO implements IpersonaDAO {
     public static void setInstance(it.miaBanca.sportello.dao.PersonaDAO instance) {
     }
 
-    public int verificaUtente(Persona p){
+    public int verificaUtente(PersonaModel p){
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("select * from persona where username = '"+p.getUsername()+"'"+"and password = '"+p.getPassword()+"';");
 
         int esito;
@@ -117,7 +125,7 @@ public class PersonaDAO implements IpersonaDAO {
         return esito = -1;
     }
 
-    public boolean carica(Persona p) {
+    public boolean carica(PersonaModel p) {
 
         String sql = "SELECT * FROM persona WHERE idpersona="+p.getUsername()+";";
 
@@ -125,21 +133,21 @@ public class PersonaDAO implements IpersonaDAO {
 
         if (result.size() != 0) {
             String[] riga = result.get(0);
-            p = new Persona();
+            p = new PersonaModel();
             p.setNome(riga[1]);
             p.setCognome(riga[2]);
             return true;
         }
         return false;
     }
-    public ArrayList<ContoCorrente> findByContoCorrente(ContoCorrente cc) {
-        ArrayList<ContoCorrente> c = null;
+    public ArrayList<ContoCorrenteModel> findByContoCorrente(ContoCorrenteModel cc) {
+        ArrayList<ContoCorrenteModel> c = null;
         return c;
     }
 
 
 
-    public int InserisciPersona (Persona p)
+    public int InserisciPersona (PersonaModel p)
     {
 
         String sql= "SELECT * FROM persona WHERE username='"+p.getUsername()+"';";

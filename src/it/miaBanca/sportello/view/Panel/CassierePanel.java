@@ -1,18 +1,28 @@
 package it.miaBanca.sportello.view.Panel;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class CassierePanel {
+    private JPanel cassierePanel;
+    private JButton visualizzaRichiesteButton;
+    private JButton logOutCassiereButton;
 
-    public static class ClientePanel {
-        private JTextField maCheBellaGiornataTextField;
-
-        public JTextField getMaCheBellaGiornataTextField() {
-            return maCheBellaGiornataTextField;
-        }
-
-        public void setMaCheBellaGiornataTextField(JTextField maCheBellaGiornataTextField) {
-            this.maCheBellaGiornataTextField = maCheBellaGiornataTextField;
-        }
+    public CassierePanel() {
+        cassierePanel.getUI();
+        cassierePanel.setVisible(false);
     }
+
+    public JPanel getCassierePanel() {
+        return cassierePanel;
+    }
+
+    public JButton getVisualizzaRichiesteButton() {
+        return visualizzaRichiesteButton;
+    }
+
+    public JButton getLogOutCassiereButton() {
+        return logOutCassiereButton;
+    }
+
 }

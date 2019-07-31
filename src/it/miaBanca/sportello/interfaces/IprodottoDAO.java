@@ -1,15 +1,15 @@
 package it.miaBanca.sportello.interfaces;
 
-import it.miaBanca.sportello.model.Prodotto;
+import it.miaBanca.sportello.model.ProdottoModel;
 
 import java.util.ArrayList;
 
-public interface IprodottoDAO extends IBaseDAO<Prodotto> {
+public interface IprodottoDAO extends IBaseDAO<ProdottoModel> {
 
     @Override
 
-    public Prodotto findById(int id);
+    public ProdottoModel findById(int id);
 
     @Override
-    public ArrayList<Prodotto> findAll();
+    public ArrayList<ProdottoModel> findAll();
 }

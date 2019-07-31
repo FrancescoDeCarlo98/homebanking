@@ -4,12 +4,12 @@ import it.miaBanca.sportello.model.*;
 
 import java.util.ArrayList;
 
-public interface IpersonaDAO extends IBaseDAO<Persona>
+public interface IpersonaDAO extends IBaseDAO<PersonaModel>
 {
-   Persona findById(int id);
+   PersonaModel findById(int id);
 
-     ArrayList<Persona> findAll();
+     ArrayList<PersonaModel> findAll();
 
-     ArrayList<ContoCorrente> findByContoCorrente(ContoCorrente cc);
-    int verificaUtente(Persona p);
+     ArrayList<ContoCorrenteModel> findByContoCorrente(ContoCorrenteModel cc);
+    int verificaUtente(PersonaModel p);
 }

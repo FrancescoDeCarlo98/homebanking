@@ -3,7 +3,7 @@ package it.miaBanca.sportello.model;
 import it.miaBanca.sportello.exceptions.LoginFailedException;
 import it.miaBanca.sportello.dao.PersonaDAO;
 
-public class Persona {
+public class PersonaModel {
     private String idpersona;
     private String nome;
     private String cognome;
@@ -11,7 +11,7 @@ public class Persona {
     private String email;
     private String username;
     private String password;
-    private ContoCorrente contoCorrente;
+    private ContoCorrenteModel contoCorrente;
 
     public String getIdpersona() {
         return idpersona;
@@ -69,14 +69,14 @@ public class Persona {
         this.email = email;
     }
 
-    public Persona(){}
+    public PersonaModel(){}
 
-    public Persona(String username, String password) {
+    public PersonaModel(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public Persona(String nome, String cognome, String indirizzo, String email, String username, String password ) {
+    public PersonaModel(String nome, String cognome, String indirizzo, String email, String username, String password ) {
         this.nome = nome;
         this.cognome = cognome;
         this.indirizzo = indirizzo;

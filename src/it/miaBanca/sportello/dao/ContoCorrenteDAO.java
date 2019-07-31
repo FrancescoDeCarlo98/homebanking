@@ -19,8 +19,8 @@ public class ContoCorrenteDAO implements IContoCorrenteDAO {
 
     //Viene applicato il pattern singleton. Serve per non avere più istanze (oggetti) uguali.
 
-    public ContoCorrente findById(int id) {
-        ContoCorrente cc = null;
+    public ContoCorrenteModel findById(int id) {
+        ContoCorrenteModel cc = null;
 
         String sql = "SELECT * FROM Conto_Corrente WHERE idConto_corrente=" + id + ";";
 
@@ -29,7 +29,7 @@ public class ContoCorrenteDAO implements IContoCorrenteDAO {
         if (result.size() != 0)
         {
             String[] riga = result.get(0); //ogni elemento di riga contiene un campo della riga result
-            cc = new ContoCorrente();
+            cc = new ContoCorrenteModel();
             cc.setCodice(riga[1]);
             cc.setSaldo(Float.valueOf(riga[2]));
             cc.setFido(Float.valueOf(riga[3]));
@@ -39,13 +39,13 @@ public class ContoCorrenteDAO implements IContoCorrenteDAO {
         return cc;
 
     }
-    public ArrayList<ContoCorrente> findByPersona(Persona p)
+    public ArrayList<ContoCorrenteModel> findByPersona(PersonaModel p)
     {
         String sql = "SELECT * FROM Conto_Corrente WHERE persona_idpersona = " + p.getIdpersona() + " ";
 
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery(sql);
 
-        ArrayList<ContoCorrente> contipersona = null;
+        ArrayList<ContoCorrenteModel> contipersona = null;
 
         if (result.size() != 0)
         {
@@ -53,7 +53,7 @@ public class ContoCorrenteDAO implements IContoCorrenteDAO {
 
             while(i.hasNext()) {
                 String[] riga = i.next(); //ogni elemento di riga contiene un campo della riga result
-                ContoCorrente cc = new ContoCorrente();
+                ContoCorrenteModel cc = new ContoCorrenteModel();
                 cc.setCodice(riga[1]);
                 cc.setSaldo(Float.parseFloat(riga[2]));
                 cc.setFido(Float.parseFloat(riga[3]));
@@ -66,8 +66,8 @@ public class ContoCorrenteDAO implements IContoCorrenteDAO {
 
         return null;
     }
-    public ArrayList<ContoCorrente> findAll(){
-        ArrayList<ContoCorrente> cc = null;
+    public ArrayList<ContoCorrenteModel> findAll(){
+        ArrayList<ContoCorrenteModel> cc = null;
         return cc;
     }
 }

@@ -1,27 +1,27 @@
 package it.miaBanca.sportello.model;
 
-public class ContoCorrente extends Prodotto{
+public class ContoCorrenteModel extends ProdottoModel{
 
     private String codice;
     private String titolare;
     private float saldo;
     private float fido;
 
-    public Persona getPersona()
+    public PersonaModel getPersona()
     {
         return persona;
     }
 
-    private Persona persona;
+    private PersonaModel persona;
     private static float massimalePrelievo;
 
-    public ContoCorrente() {}
+    public ContoCorrenteModel() {}
 
-    public ContoCorrente(String titolare) {
+    public ContoCorrenteModel(String titolare) {
         this.titolare = titolare;
     }
 
-    public ContoCorrente(String titolare, float saldo) {
+    public ContoCorrenteModel(String titolare, float saldo) {
         this.titolare = titolare;
         this.saldo = saldo;
     }
@@ -68,7 +68,7 @@ public class ContoCorrente extends Prodotto{
         this.titolare = titolare;
     }
 
-    public void setPersona(Persona persona) {
+    public void setPersona(PersonaModel persona) {
         this.persona = persona;
         this.titolare = persona.getNome()+" "+persona.getCognome();
     }

@@ -1,6 +1,6 @@
 package it.miaBanca.sportello.business;
 
-import it.miaBanca.sportello.model.Persona;
+import it.miaBanca.sportello.model.PersonaModel;
 import it.miaBanca.sportello.view.Frame;
 
 import javax.swing.*;
@@ -8,16 +8,16 @@ import javax.swing.*;
 public class LoginBusiness {
 
     // Inserisci le funzioni che userà la View
-    private Persona p;
+    private PersonaModel p;
 
     public int login(String username, String password) {
 
-         this.p = new Persona(username, password);
+         this.p = new PersonaModel(username, password);
         return p.login();
 
     }
 
-    public Persona getP() { return p; }
+    public PersonaModel getP() { return p; }
 
-    public void setP(Persona p) { this.p = p; }
+    public void setP(PersonaModel p) { this.p = p; }
 }

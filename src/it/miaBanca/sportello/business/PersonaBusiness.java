@@ -3,7 +3,7 @@ package it.miaBanca.sportello.business;
 import it.miaBanca.sportello.helpers.MailHelper;
 import it.miaBanca.sportello.helpers.SessionHelper;
 import it.miaBanca.sportello.dao.PersonaDAO;
-import it.miaBanca.sportello.model.Persona;
+import it.miaBanca.sportello.model.PersonaModel;
 
 import java.util.ArrayList;
 
@@ -17,8 +17,8 @@ public class PersonaBusiness
         return instance;
     }
 
-    public Persona findById(int id){
-        Persona p = new Persona();
+    public PersonaModel findById(int id){
+        PersonaModel p = new PersonaModel();
         p = PersonaDAO.getInstance().findById(id);
         return p;
     }
@@ -30,8 +30,8 @@ public class PersonaBusiness
 
     }
 
-    public Persona findByUser(String user){
-        Persona p = new Persona();
+    public PersonaModel findByUser(String user){
+        PersonaModel p = new PersonaModel();
         return p = PersonaDAO.getInstance().findByUser(user);
     }
 
